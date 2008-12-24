@@ -4,14 +4,16 @@
 // http://newism.com.au
 // Notes: 
 // Still a work in progress
-// Inspired By - http://code.google.com/p/jqplanize/ & http://blog.rebeccamurphey.com/2007/12/24/jquery-table-of-contents-plugin-nested/
+// Inspired By:
+// http://code.google.com/p/jqplanize/
+// http://blog.rebeccamurphey.com/2007/12/24/jquery-table-of-contents-plugin-nested/
 
 // create closure
 (function($) {
 	// plugin definition
 	$.fn.nsmTOC = function(options) {
 
-		//console.log("nsm_TOC selection count: %c", this.size());
+		log("nsm_TOC.js selection count: %c", this.size());
 
 		// build main options before element iteration
 		var opts = $.extend({}, $.fn.nsmTOC.defaults, options);
@@ -22,50 +24,40 @@
 			var $self 			= $(this);
 			var lastDepth		= 0;
 			var levels			= [0,0,0,0,0,0];
-			var hLevelText		= "";
-			var prependText 	= "";
-			var prevLevel		= 0;
-			var n				= 0;
 
-			var $toc = $("<ul></ul>").addClass("l-"+lastDepth);
-			var $current_ul = $toc;
-			var anchorList =  new Array();
+			var $toc = $current_ul = $('<ul class="l-'+lastDepth+'">');
 
 			var o = $.meta ? $.extend({}, opts, $self.data()) : opts;
 
 			$("*:header:visible", $self).each(function(index, heading) {
 
 				var $self 		= $(this);
-				var	text		= $self.text();
-
-				hDepth = parseInt(heading.tagName.substring(1));
+				var text		= $self.text();
+				var hDepth 		= parseInt(heading.tagName.substring(1));
+				var depth 		= hDepth - o.min_depth;
 
 				if (o.min_depth <= hDepth && hDepth <= o.max_depth) {
 
-					//console.log("Processing heading %o", heading);
-
-					// set the depth
-					depth = hDepth - o.min_depth;
-					toc_marker = "";
+					log("\nProcessing heading %o", heading);
 
 					var $li = $("<li>");
 
 					// same depth
 					if (depth == lastDepth) {
-						//console.log("same depth (" + depth + ")");
 						$current_ul.append($li);
 						levels[depth]++;
 						levels[depth + 1] = 0;
-						//console.log(levels.join("."));
+						log("same depth (" + depth + ")");
+						log("levels: %o", levels.join("."));
 					// going deeper
 					} else if (depth > lastDepth) {
 						while(depth > lastDepth)
 						{
-							//console.log("nesting because:" + depth + ">" + lastDepth);
+							//log("nesting because:" + depth + ">" + lastDepth);
 							levels[lastDepth + 1]++;
 							levels[lastDepth + 2] = 0;
 							lastDepth++;
-							//console.log(levels.join("."));
+							log("levels: %o", levels.join("."));
 							$new_ul = $("<ul></ul>").addClass("l-"+lastDepth);
 							if(!$("li:last", $current_ul).length){
 								$current_ul.append("<li>");
@@ -78,50 +70,61 @@
 					} else if (depth < lastDepth) {
 						while(depth < lastDepth)
 						{
-							//console.log("unnesting because:" + depth + "<" + lastDepth);
+							log("unnesting because:" + depth + "<" + lastDepth);
 							levels[lastDepth - 1]++;
 							levels[lastDepth] = 0;
 							lastDepth--;
-							//console.log(levels.join("."));
+							log("levels: %o", levels.join("."));
 							$current_ul = $current_ul.parent().parent();
 						}
 						$current_ul.append($li);
 					}
-					
+
+					// TOC integer marker
+					toc_marker = "";
+
+					//  build the marker
 					for (var l = 0; l <= depth; l++) {
 						toc_marker += levels[l] > 0 ? levels[l] + o.number_separator : '';
 					}
 
+					// get rid of the last seperator
 					toc_marker = prependText = toc_marker.substring(0, toc_marker.length - 1);
 
+					// add a number suffix?
 					if (o.number_suffix) {
 						prependText = toc_marker + o.number_suffix;
 					}
 
-					//console.log(hLevelText);
-					//console.log($li);
-					//console.log(" ");
-
 					// do the titles
-					hPrependText = '<span id="h' + toc_marker + '" class="' + o.header_span_class + '">'+ prependText+'</span>';
-					$self.prepend(hPrependText + " ");
+					$self.prepend('<span id="h' + toc_marker + '" class="' + o.header_span_class + '">' + prependText + '</span> ');
+					if(o.add_top_links)
+					{
+						$self.append(" <a href='"+o.top_link_target+"' class='"+o.top_link_class+"'>Top</a>");
+					}
 
 					// do the link
-					$li.addClass($self.attr("class")).prepend('<a href="#h'+toc_marker+'"><span>' + prependText + '</span> '+text+'</a>');
+					$li.addClass($self.attr("class")).prepend('<a href="#h' + toc_marker + '"><span>' + prependText + '</span> ' + text + '</a>');
 
 				}
 				
 			});
-
 			$(o.toc_el).append($toc);
 		});
+
+		function log() {
+			if (!$.fn.nsmTOC.defaults.debug) {
+				return;
+			}
+			try {
+				console.log.apply(console, arguments);
+			} catch(e) {
+				try {
+					opera.postError.apply(opera, arguments);
+				} catch(e){}
+			}
+		}
 	}
-
-	// private function for debugging
-	function hLevelText()
-	{
-
-	};
 
 	// plugin defaults
 	$.fn.nsmTOC.defaults = {
@@ -133,7 +136,10 @@
 		number_suffix:		".",
 		number_separator: 	".",
 		debug: 				true,
-		header_span_class: 	"toc-marker"
+		header_span_class: 	"toc-marker",
+		add_top_links: 		true,
+		top_link_target: 	"#",
+		top_link_class: 	"top"
 	};
 
 // end of closure
