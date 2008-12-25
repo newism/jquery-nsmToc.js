@@ -32,11 +32,11 @@
 			$("*:header:visible", $self).each(function(index, heading) {
 
 				var $self 		= $(this);
-				var text		= $self.text();
+				var text		= $self.text().replace(/>/g, "&gt;").replace(/</g, "&lt;");
 				var hDepth 		= parseInt(heading.tagName.substring(1));
 				var depth 		= hDepth - o.min_depth;
 
-				if (o.min_depth <= hDepth && hDepth <= o.max_depth) {
+				if (o.min_depth <= hDepth && hDepth <= o.max_depth && !$self.hasClass(o.ignore_class)) {
 
 					log("\nProcessing heading %o", heading);
 
@@ -92,19 +92,17 @@
 					toc_marker = prependText = toc_marker.substring(0, toc_marker.length - 1);
 
 					// add a number suffix?
-					if (o.number_suffix) {
-						prependText = toc_marker + o.number_suffix;
-					}
+					prependText = toc_marker + o.number_suffix;
 
 					// do the titles
-					$self.prepend('<span id="h' + toc_marker + '" class="' + o.header_span_class + '">' + prependText + '</span> ');
+					$self.prepend('<span id="' + o.hash_prefix + toc_marker + '" class="' + o.header_span_class + '">' + prependText + '</span> ');
 					if(o.add_top_links)
 					{
-						$self.append(" <a href='"+o.top_link_target+"' class='"+o.top_link_class+"'>Top</a>");
+						$self.append(" <a href='" + o.top_link_target + "' class='" + o.top_link_class + "'>Top</a>");
 					}
 
 					// do the link
-					$li.addClass($self.attr("class")).prepend('<a href="#h' + toc_marker + '"><span>' + prependText + '</span> ' + text + '</a>');
+					$li.addClass($self.attr("class")).prepend('<a href="#' + o.hash_prefix + toc_marker + '"><span>' + prependText + '</span> ' + text + '</a>');
 
 				}
 				
@@ -131,6 +129,8 @@
 		generate_toc:		true, 
 		toc_title:			false,
 		toc_el:				"body",
+		ignore_class: 		"toc-ignore",
+		hash_prefix: 		"toc-",
 		min_depth:			1,
 		max_depth: 			6,
 		number_suffix:		".",
