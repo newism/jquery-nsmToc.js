@@ -36,7 +36,7 @@
 				var hDepth 		= parseInt(heading.tagName.substring(1));
 				var depth 		= hDepth - o.min_depth;
 
-				if (o.min_depth <= hDepth && hDepth <= o.max_depth && !$self.hasClass(o.ignore_class)) {
+				if (o.min_depth <= hDepth && hDepth <= o.max_depth && !$self.is(o.ignore)) {
 
 					log("\nProcessing heading %o", heading);
 
@@ -129,7 +129,7 @@
 		generate_toc:		true, 
 		toc_title:			false,
 		toc_el:				"body",
-		ignore_class: 		"toc-ignore",
+		ignore: 			".toc-ignore",
 		hash_prefix: 		"toc-",
 		min_depth:			1,
 		max_depth: 			6,
