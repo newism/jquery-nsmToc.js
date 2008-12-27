@@ -25,7 +25,38 @@ Usage
 	$('body').nsm_TOC();  
 	$('body').nsm_TOC({ hash_prefix: "h-"}); // Changes the hash prefix for the TOC links  
 	$('body').nsm_TOC({ min_depth: 2, max_depth: 5}); // Creates a TOC using heading elments 2-5 nested in the target element  
-	$('body').nsm_TOC({ add_top_links: false}); // Doesn't add top links to heading elements  
+	$('body').nsm_TOC({ add_top_links: false}); // Doesn't add top links to heading elements
+
+### Example TOC output:
+
+	<div id="toc"><ul class="l-0">
+		<ul class="l-0">
+			<li><a href="#toc-1"><span class="toc-marker">1.</span> General Markup - p, a, strong, em, del, ins, abbr, accronym, sub, sup, blockquote cite</a>
+				<ul class="l-1">
+					<li><a href="#toc-1.1"><span class="toc-marker">1.1.</span> strong, cite, em, a</a></li>
+					<li><a href="#toc-1.2"><span class="toc-marker">1.2.</span> a[rel=external], del, ins</a></li>
+					<li><a href="#toc-1.3"><span class="toc-marker">1.3.</span> sub, sup</a></li>
+					<li><a href="#toc-1.4"><span class="toc-marker">1.4.</span> abbr, acronym</a></li>
+					<li><a href="#toc-1.5"><span class="toc-marker">1.5.</span> Combination styles - a, stong, em</a></li>
+					<li><a href="#toc-1.6"><span class="toc-marker">1.6.</span> Blockquotes</a></li>
+				</ul>
+			</li>
+			<li><a href="#toc-2"><span class="toc-marker">2.</span> Lists - ul, ol, dl</a>
+				<ul class="l-1">
+					<li><a href="#toc-2.1"><span class="toc-marker">2.1.</span> Un-ordered list</a></li>
+					<li><a href="#toc-2.2"><span class="toc-marker">2.2.</span> Ordered list</a></li>
+					<li><a href="#toc-2.3"><span class="toc-marker">2.3.</span> Definition List</a></li>
+					<li><a href="#toc-2.4"><span class="toc-marker">2.4.</span> Nested Lists</a></li>
+				</ul>
+			</li>
+			<li><a href="#toc-3"><span class="toc-marker">3.</span> Tables</a></li>
+			<li><a href="#toc-4"><span class="toc-marker">4.</span> Forms</a></li>
+			<li><a href="#toc-5"><span class="toc-marker">5.</span> Embedded Object</a></li>
+			<li><a href="#toc-6"><span class="toc-marker">6.</span> Heading Tag Spacing</a></li>
+			<li><a href="#toc-7"><span class="toc-marker">7.</span> Figures </a></li>
+		</ul>
+	</div>
+
 
 ### Options
 
