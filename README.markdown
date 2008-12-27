@@ -3,7 +3,7 @@ nsm_TOC.js - A jQuey plugin to create a table of contents from HTML markup.
 
 **Author**: [Leevi Graham](leevi@newism.com.au) - Technical Director, [Newism Pty Ltd][]  
 **Version**: 1.0.0  
-**Git Master Repository**: &lt;http://github.com/newism/nsm.toc.jquery_plugin/tree/master&gt;
+**Git Master Repository**: <http://github.com/newism/nsm.toc.jquery_plugin/tree/master>
 
 About
 -----
