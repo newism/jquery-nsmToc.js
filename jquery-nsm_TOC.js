@@ -21,11 +21,12 @@
 *	 @option {String} hash_prefix The string prepended to the anchor hash target.
 *	 @option {Number} min_depth The minimun header element to include. Ex: "1" will build the TOC starting with <h1> elements while "2" will build the TOC starting with <h2> elements
 *	 @option {Number} max_depth The max header element to include. Ex: "5" will build the TOC stopping at (but including) <h5> elements while "6" will build the TOC stopping at (but including) <h6> elements
+*	 @option {Boolean} prepend_toc_marker Prepend TOC markers to the header elements
 *	 @option {String} toc_marker_suffix The string added after the toc marker. Ex: If the TOC marker is 1.1.1 and the toc_marker_suffix is "." the final output will be: "1.1.1." If the TOC Marker is 1.2.3 and the number suffix is ")" the final output will be "1.2.3)"
 *	 @option {String} toc_marker_seperator The string that divides the toc_marker levels. Ex: If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "." the final output will be: "1.1.1" If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "-" the final output will be: "1-1-1"
 *	 @option {Boolean} debug Diplay console messages
 *	 @option {String} header_span_class The class to add to the header toc_marker span element. Ex: <span class="toc-marker">1.2.3</span>
-*	 @option {Boolean} add_top_links Add top links to each heading element in the TOC. Ex: <h1><span class="toc-marker">1</span> Heading 1 <a href="#top">Top</a></h1>
+*	 @option {Boolean} append_top_links Add top links to each heading element in the TOC. Ex: <h1><span class="toc-marker">1</span> Heading 1 <a href="#top">Top</a></h1>
 *	 @option {String} top_link_class The class to add to the top link anchor element. Ex: <a href="#top" class="top">Top</a>
 * @return {jQuery} Returns the same jQuery object, for chaining.
 *
@@ -127,8 +128,11 @@
 					prependText = toc_marker + o.toc_marker_suffix;
 
 					// do the titles
-					$self.prepend('<span id="' + o.hash_prefix + toc_marker + '" class="' + o.header_span_class + '">' + prependText + '</span> ');
-					if(o.add_top_links)
+					if(o.prepend_toc_marker)
+					{
+						$self.prepend('<span id="' + o.hash_prefix + toc_marker + '" class="' + o.header_span_class + '">' + prependText + '</span> ');
+					}
+					if(o.append_top_links)
 					{
 						$self.append(" <a href='" + o.top_link_href + "' class='" + o.top_link_class + "'>Top</a>");
 					}
@@ -161,19 +165,20 @@
 
 	// plugin defaults
 	$.fn.nsmTOC.defaults = {
-		append_toc:			true, 
-		toc_el:				"body",
-		ignore: 			".toc-ignore",
-		hash_prefix: 		"toc-",
-		min_depth:			1,
-		max_depth: 			6,
+		append_toc:				true, 
+		toc_el:					"body",
+		ignore: 				".toc-ignore",
+		hash_prefix: 			"toc-",
+		min_depth:				1,
+		max_depth: 				6,
+		prepend_toc_marker:		true,
 		toc_marker_suffix:		".",
 		toc_marker_separator: 	".",
-		debug: 				true,
-		header_span_class: 	"toc-marker",
-		add_top_links: 		true,
-		top_link_href: 		"#",
-		top_link_class: 	"top"
+		debug:					true,
+		header_span_class:		"toc-marker",
+		append_top_links:		true,
+		top_link_href:			"#",
+		top_link_class:			"top"
 	};
 
 // end of closure
