@@ -53,7 +53,7 @@ Hash of options, optional.
 #### **max\_depth**
 {Number} The max header element to include. Ex: "5" will build the TOC stopping at (but including) &lt;h5&gt; elements while "6" will build the TOC stopping at (but including) &lt;h6&gt; elements
 
-#### **prepend_toc\_marker**
+#### **prepend\_toc\_marker**
 {Boolean} Prepend TOC markers to the header elements and the TOC list items
 
 #### **toc\_marker\_suffix**
