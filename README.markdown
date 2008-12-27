@@ -8,13 +8,13 @@ nsm_TOC.js - A jQuey plugin to create a table of contents from HTML markup.
 About
 -----
 
-nsm_TOC.js is a jQuery plugin that generates a nested &lt;ul&gt; table of contents based on header tags &lt;h*n*&gt; in your html markup.
+nsm_TOC.js is a jQuery plugin that generates a nested <code>&lt;ul&gt;</code> table of contents based on header tags <code>&lt;h*n*&gt;</code> in your html markup.
 
 Other features include:
 
-* TOC markers prepended to each heading element (optional) which are reflected in the TOC ie: 1.2.3 - Heading 1.
-* "top links" appended to each heading element (optional) ie: &lt;a href="#top"&gt;Top&lt;/a&gt;
-* Suport for non-linear headings preserving toc markers: <code>&lt;h1&gt;Heading 1&lt;/h1&gt; &lt;h2&gt;Heading 2&lt;/h2&gt; &lt;h4&gt;Heading 4&lt;/h4&gt;</code>
+* TOC markers prepended to each heading element (optional) which are reflected in the TOC eg: 1.2.3 - Heading 1.
+* "top links" appended to each heading element (optional) eg: <code>&lt;a href="#top"&gt;Top&lt;/a&gt;</code>
+* Support for non-linear headings preserving toc markers: <code>&lt;h1&gt;Heading 1&lt;/h1&gt; &lt;h2&gt;Heading 2&lt;/h2&gt; &lt;h4&gt;Heading 4&lt;/h4&gt;</code>
 
 Usage
 -----
@@ -76,28 +76,28 @@ Hash of options, optional.
 {String} The string prepended to the anchor hash target.
 
 #### **min\_depth**
-{Number} The minimun header element to include. Ex: "1" will build the TOC starting with &lt;h1&gt; elements while "2" will build the TOC starting with &lt;h2&gt; elements.
+{Number} The minimun header element to include. eg: "1" will build the TOC starting with <code>&lt;h1&gt;</code> elements while "2" will build the TOC starting with <code>&lt;h2&gt;</p> elements.
 
 #### **max\_depth**
-{Number} The max header element to include. Ex: "5" will build the TOC stopping at (but including) &lt;h5&gt; elements while "6" will build the TOC stopping at (but including) &lt;h6&gt; elements.
+{Number} The max header element to include. eg: "5" will build the TOC stopping at (but including) <code>&lt;h5&gt;</code> elements while "6" will build the TOC stopping at (but including) <code>&lt;h6&gt;</code> elements.
 
 #### **prepend\_toc\_marker**
 {Boolean} Prepend TOC markers to the header elements and the TOC list items.
 
 #### **toc\_marker\_suffix**
-{String} The string added after the toc marker. Ex: If the TOC marker is 1.1.1 and the toc_marker_suffix is "." the final output will be: "1.1.1." If the TOC Marker is 1.2.3 and the number suffix is ")" the final output will be "1.2.3)".
+{String} The string added after the toc marker. eg: If the TOC marker is 1.1.1 and the toc_marker_suffix is "." the final output will be: "1.1.1." If the TOC Marker is 1.2.3 and the number suffix is ")" the final output will be "1.2.3)".
 
 #### **toc\_marker\_seperator**
-{String} The string that divides the toc_marker levels. Ex: If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "." the final output will be: "1.1.1" If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "-" the final output will be: "1-1-1".
+{String} The string that divides the toc_marker levels. eg: If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "." the final output will be: "1.1.1" If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "-" the final output will be: "1-1-1".
 
 #### **toc\_marker\_class**
-{String} The class to add to the header and TOC list element toc_marker span. Ex: &lt;span class="toc-marker"&gt;1.2.3&lt;/span&gt;.
+{String} The class to add to the header and TOC list element toc_marker span. eg: <code>&lt;span class="toc-marker"&gt;1.2.3&lt;/span&gt;</code>.
 
 #### **append\_top\_links**
-{Boolean} Add top links to each heading element in the TOC. Ex: &lt;h1&gt;&lt;span class="toc-marker"&gt;1&lt;/span&gt; Heading 1 &lt;a href="#top"&gt;Top&lt;/a&gt;&lt;/h1&gt;.
+{Boolean} Add top links to each heading element in the TOC. eg: <code>&lt;h1&gt;&lt;span class="toc-marker"&gt;1&lt;/span&gt; Heading 1 &lt;a href="#top"&gt;Top&lt;/a&gt;&lt;/h1&gt;</code>.
 
 #### **top\_link\_class**
-{String} The class to add to the top link anchor element. Ex: &lt;a href="#top" class="top"&gt;Top&lt;/a&gt;.
+{String} The class to add to the top link anchor element. eg: <code>&lt;a href="#top" class="top"&gt;Top&lt;/a&gt;</code>.
 
 ### Returns
 
