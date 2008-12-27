@@ -8,17 +8,13 @@ nsm_TOC.js - A jQuey plugin to create a table of contents from HTML markup.
 About
 -----
 
-nsm_TOC.js is a jQuery plugin that generates a nested &lt;ul&gt; table of contents based on header tags &lt;h*n*&gt; in your html markup. 
+nsm_TOC.js is a jQuery plugin that generates a nested &lt;ul&gt; table of contents based on header tags &lt;h*n*&gt; in your html markup.
 
-Other features include: 
+Other features include:
 
 * TOC markers prepended to each heading element (optional) which are reflected in the TOC ie: 1.2.3 - Heading 1.
 * "top links" appended to each heading element (optional) ie: &lt;a href="#top"&gt;Top&lt;/a&gt;
 * Suport for non-linear headings preserving toc markers:
-
-	<code>&lt;h1&gt;Heading 1&lt;/h1&gt;
-	&lt;h2&gt;Heading 2&lt;/h2&gt;
-	&lt;h4&gt;Heading 4&lt;/h4&gt;</code>
 
 Usage
 -----
@@ -27,9 +23,9 @@ Usage
 
 ### Examples
 
-	$('body').nsm_TOC();  
-	$('body').nsm_TOC({ hash_prefix: "h-"}); // Changes the hash prefix for the TOC links  
-	$('body').nsm_TOC({ min_depth: 2, max_depth: 5}); // Creates a TOC using heading elments 2-5 nested in the target element  
+	$('body').nsm_TOC();
+	$('body').nsm_TOC({ hash_prefix: "h-"}); // Changes the hash prefix for the TOC links
+	$('body').nsm_TOC({ min_depth: 2, max_depth: 5}); // Creates a TOC using heading elments 2-5 nested in the target element
 	$('body').nsm_TOC({ add_top_links: false}); // Doesn't add top links to heading elements
 
 ### Example TOC output:
