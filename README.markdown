@@ -1,4 +1,4 @@
-nsm_TOC.js - A jQuey plugin to create a table of contents from HTML markup.
+nsm_TOC.js - A jQuery plugin to create a table of contents from HTML markup.
 ===========================================================================
 
 **Author**: [Leevi Graham](leevi@newism.com.au) - Technical Director, [Newism Pty Ltd][]  
@@ -102,8 +102,6 @@ Hash of options, optional.
 ### Returns
 
 Returns the same jQuery object, for chaining.
-
-
 
 License
 -------
