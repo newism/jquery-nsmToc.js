@@ -1,7 +1,3 @@
-This file is written using the MarkDown syntax. It may or may not have been parsed. If you are having trouble reading it try running the contents through http://daringfireball.net/projects/markdown/dingus.
-
----
-
 nsm_TOC.js - A jQuey plugin to create a table of contents from HTML markup.
 ===========================================================================
 
@@ -91,6 +87,10 @@ Under the following conditions:
 
 * **Attribution** - You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work).
 * **Share Alike** - If you alter, transform, or build upon this work, you may distribute the resulting work only under the same, similar or a compatible license.
+
+---
+
+This file is written using the MarkDown syntax. It may or may not have been parsed. If you are having trouble reading it try running the contents through http://daringfireball.net/projects/markdown/dingus.
 
 [Newism Pty Ltd]: http://newism.com.au/
 [Creative Commons Attribution-Share Alike 3.0 Unported]: http://creativecommons.org/licenses/by-sa/3.0/ 
