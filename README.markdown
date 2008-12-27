@@ -14,7 +14,11 @@ Other features include:
 
 * TOC markers prepended to each heading element (optional) which are reflected in the TOC ie: 1.2.3 - Heading 1.
 * "top links" appended to each heading element (optional) ie: &lt;a href="#top"&gt;Top&lt;/a&gt;
-* Suport for non-linear headings preserving toc markers:
+* Suport for non-linear headings preserving toc markers
+
+<code>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;</code>
 
 Usage
 -----
