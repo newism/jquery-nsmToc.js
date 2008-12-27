@@ -132,13 +132,18 @@
 					{
 						$self.prepend('<span id="' + o.hash_prefix + toc_marker + '" class="' + o.header_span_class + '">' + prependText + '</span> ');
 					}
+
 					if(o.append_top_links)
 					{
 						$self.append(" <a href='" + o.top_link_href + "' class='" + o.top_link_class + "'>Top</a>");
 					}
 
-					// do the link
-					$li.addClass($self.attr("class")).prepend('<a href="#' + o.hash_prefix + toc_marker + '"><span>' + prependText + '</span> ' + text + '</a>');
+					if(o.append_toc)
+					{
+						// do the TOC link
+						link_toc_marker = (o.prepend_toc_marker) ? '<span>' + prependText + '</span> ' : '';
+						$li.addClass($self.attr("class")).prepend('<a href="#' + o.hash_prefix + toc_marker + '">' + link_toc_marker + text + '</a>');
+					}
 
 				}
 				
