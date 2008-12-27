@@ -39,7 +39,7 @@ Hash of options, optional.
 {Boolean} Append the generated TOC to the toc_el
 
 #### **toc\_el**
-{String, DOMElement, jQuery, Object} The element that the TOC will be appended to
+{String, DOMElement, jQuery} The element that the TOC will be appended to.
 
 #### **ignore**
 {String, DOMElement, jQuery} A collection of header elements which are not included in the TOC.
@@ -48,31 +48,28 @@ Hash of options, optional.
 {String} The string prepended to the anchor hash target.
 
 #### **min\_depth**
-{Number} The minimun header element to include. Ex: "1" will build the TOC starting with &lt;h1&gt; elements while "2" will build the TOC starting with &lt;h2&gt; elements
+{Number} The minimun header element to include. Ex: "1" will build the TOC starting with &lt;h1&gt; elements while "2" will build the TOC starting with &lt;h2&gt; elements.
 
 #### **max\_depth**
-{Number} The max header element to include. Ex: "5" will build the TOC stopping at (but including) &lt;h5&gt; elements while "6" will build the TOC stopping at (but including) &lt;h6&gt; elements
+{Number} The max header element to include. Ex: "5" will build the TOC stopping at (but including) &lt;h5&gt; elements while "6" will build the TOC stopping at (but including) &lt;h6&gt; elements.
 
 #### **prepend\_toc\_marker**
-{Boolean} Prepend TOC markers to the header elements and the TOC list items
+{Boolean} Prepend TOC markers to the header elements and the TOC list items.
 
 #### **toc\_marker\_suffix**
-{String} The string added after the toc marker. Ex: If the TOC marker is 1.1.1 and the toc_marker_suffix is "." the final output will be: "1.1.1." If the TOC Marker is 1.2.3 and the number suffix is ")" the final output will be "1.2.3)"
+{String} The string added after the toc marker. Ex: If the TOC marker is 1.1.1 and the toc_marker_suffix is "." the final output will be: "1.1.1." If the TOC Marker is 1.2.3 and the number suffix is ")" the final output will be "1.2.3)".
 
 #### **toc\_marker\_seperator**
-{String} The string that divides the toc_marker levels. Ex: If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "." the final output will be: "1.1.1" If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "-" the final output will be: "1-1-1"
-
-#### **debug** {Boolean}
-Diplay console messages
+{String} The string that divides the toc_marker levels. Ex: If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "." the final output will be: "1.1.1" If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "-" the final output will be: "1-1-1".
 
 #### **toc\_marker\_class**
-{String} The class to add to the header and TOC list element toc_marker span. Ex: &lt;span class="toc-marker"&gt;1.2.3&lt;/span&gt;
+{String} The class to add to the header and TOC list element toc_marker span. Ex: &lt;span class="toc-marker"&gt;1.2.3&lt;/span&gt;.
 
 #### **append\_top\_links**
-{Boolean} Add top links to each heading element in the TOC. Ex: &lt;h1&gt;&lt;span class="toc-marker"&gt;1&lt;/span&gt; Heading 1 &lt;a href="#top"&gt;Top&lt;/a&gt;&lt;/h1&gt;
+{Boolean} Add top links to each heading element in the TOC. Ex: &lt;h1&gt;&lt;span class="toc-marker"&gt;1&lt;/span&gt; Heading 1 &lt;a href="#top"&gt;Top&lt;/a&gt;&lt;/h1&gt;.
 
 #### **top\_link\_class**
-{String} The class to add to the top link anchor element. Ex: &lt;a href="#top" class="top"&gt;Top&lt;/a&gt;
+{String} The class to add to the top link anchor element. Ex: &lt;a href="#top" class="top"&gt;Top&lt;/a&gt;.
 
 ### Returns
 

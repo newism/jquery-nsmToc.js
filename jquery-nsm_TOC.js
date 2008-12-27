@@ -24,7 +24,6 @@
 *	 @option {Boolean} prepend_toc_marker Prepend TOC markers to the header elements and the TOC list items
 *	 @option {String} toc_marker_suffix The string added after the toc marker. Ex: If the TOC marker is 1.1.1 and the toc_marker_suffix is "." the final output will be: "1.1.1." If the TOC Marker is 1.2.3 and the number suffix is ")" the final output will be "1.2.3)"
 *	 @option {String} toc_marker_seperator The string that divides the toc_marker levels. Ex: If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "." the final output will be: "1.1.1" If the TOC marker levels are 1,1 & 1 and the toc_marker_seperator is "-" the final output will be: "1-1-1"
-*	 @option {Boolean} debug Diplay console messages
 *	 @option {String} toc_marker_class The class to add to the header and TOC list element toc_marker span. Ex: <span class="toc-marker">1.2.3</span>
 *	 @option {Boolean} append_top_links Add top links to each heading element in the TOC. Ex: <h1><span class="toc-marker">1</span> Heading 1 <a href="#top">Top</a></h1>
 *	 @option {String} top_link_class The class to add to the top link anchor element. Ex: <a href="#top" class="top">Top</a>
