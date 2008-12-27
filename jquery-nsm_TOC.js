@@ -161,7 +161,7 @@
 
 	// plugin defaults
 	$.fn.nsmTOC.defaults = {
-		apend_toc:			true, 
+		append_toc:			true, 
 		toc_el:				"body",
 		ignore: 			".toc-ignore",
 		hash_prefix: 		"toc-",
