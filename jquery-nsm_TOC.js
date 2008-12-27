@@ -14,7 +14,7 @@
 *
 * @id jQuery.nsm_TOC
 * @id jQuery.fn.nsm_TOC
-* @param {Object} settings Hash of settings, optional.
+* @param {Object} options Hash of settings, optional.
 *	 @option {Boolean} append_toc Append the generated TOC to the toc_el
 *	 @option {String, DOMElement, jQuery, Object} toc_el The element that the TOC will be appended to
 *	 @option {String, DOMElement, jQuery} ignore A collection of header elements which are not included in the TOC.
