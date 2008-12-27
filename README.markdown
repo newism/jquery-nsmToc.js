@@ -1,8 +1,7 @@
 nsm_TOC.js - A jQuery plugin to create a table of contents from HTML markup.
 ===========================================================================
 
-**Author**: [Leevi Graham](leevi@newism.com.au) - Technical Director, [Newism Pty Ltd][]  
-**Version**: 1.0.0  
+**Author**: [Leevi Graham][] - Technical Director, [Newism Pty Ltd][]  
 **Git Master Repository**: <http://github.com/newism/nsm.toc.jquery_plugin/tree/master>
 
 About
@@ -26,7 +25,7 @@ Usage
 	$('body').nsm_TOC();
 	$('body').nsm_TOC({ hash_prefix: "h-"}); // Changes the hash prefix for the TOC links
 	$('body').nsm_TOC({ min_depth: 2, max_depth: 5}); // Creates a TOC using heading elments 2-5 nested in the target element
-	$('body').nsm_TOC({ add_top_links: false}); // Doesn't add top links to heading elements
+	$('body').nsm_TOC({ append_top_links: false}); // Doesn't add top links to heading elements
 
 ### Example TOC output:
 
@@ -124,3 +123,4 @@ This file is written using the MarkDown syntax. It may or may not have been pars
 
 [Newism Pty Ltd]: http://newism.com.au/
 [Creative Commons Attribution-Share Alike 3.0 Unported]: http://creativecommons.org/licenses/by-sa/3.0/ 
+[Leevi Graham]: http://leevigraham.com/
