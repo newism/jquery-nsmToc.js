@@ -139,16 +139,16 @@
 						$self.append(" <a href='" + o.top_link_href + "' class='" + o.top_link_class + "'>Top</a>");
 					}
 
-					if(o.append_toc_header_class)
-					{
-						$self.addClass(o.toc_header_class);
-					}
-
 					if(o.append_toc)
 					{
 						// do the TOC link
 						link_toc_marker = (o.prepend_toc_marker) ? '<span class="' + o.toc_marker_class + '">' + prependText + '</span> ' : '';
 						$li.addClass($self.attr("class")).prepend('<a href="#' + o.hash_prefix + toc_marker + '">' + link_toc_marker + text + '</a>');
+					}
+
+					if(o.append_toc_header_class)
+					{
+						$self.addClass(o.toc_header_class);
 					}
 
 				}
