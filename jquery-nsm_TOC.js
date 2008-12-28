@@ -48,7 +48,7 @@
 		log("nsm_TOC.js selection count: %c", this.size());
 
 		// build main options before element iteration
-		var opts = $.extend({}, $.fn.nsmTOC.defaults, options);
+		var opts = $.extend({}, $.fn.nsm_TOC.defaults, options);
 
 		// iterate and reformat each matched element
 		return this.each(function() {
@@ -154,7 +154,7 @@
 		});
 
 		function log() {
-			if (!$.fn.nsmTOC.defaults.debug) {
+			if (!$.fn.nsm_TOC.defaults.debug) {
 				return;
 			}
 			try {
@@ -168,7 +168,7 @@
 	}
 
 	// plugin defaults
-	$.fn.nsmTOC.defaults = {
+	$.fn.nsm_TOC.defaults = {
 		append_toc:				true, 
 		toc_el:					"body",
 		ignore: 				".toc-ignore",
