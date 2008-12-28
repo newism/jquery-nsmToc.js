@@ -63,7 +63,7 @@
 
 			var o = $.meta ? $.extend({}, opts, $self.data()) : opts;
 
-			$("*:header:visible", $self).each(function(index, heading) {
+			$("*[id]:header:visible", $self).each(function(index, heading) {
 
 				var $self 		= $(this);
 				var text		= $self.text().replace(/>/g, "&gt;").replace(/</g, "&lt;");
