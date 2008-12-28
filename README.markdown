@@ -98,6 +98,12 @@ Hash of options, optional.
 #### **top\_link\_class**
 {String} The class to add to the top link anchor element. eg: <code>&lt;a href="#top" class="top"&gt;Top&lt;/a&gt;</code>.
 
+#### **append\_toc\_header\_class**
+{Boolean} Append an extra class to headers listed in the TOC.
+
+#### **toc\_header\_class**
+{String} The class to append to the TOC headers.
+
 ### Returns
 
 Returns the same jQuery object, for chaining.

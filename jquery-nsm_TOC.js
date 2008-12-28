@@ -27,6 +27,8 @@
 *	 @option {String} toc_marker_class The class to add to the header and TOC list element toc_marker span. Ex: <span class="toc-marker">1.2.3</span>
 *	 @option {Boolean} append_top_links Add top links to each heading element in the TOC. Ex: <h1><span class="toc-marker">1</span> Heading 1 <a href="#top">Top</a></h1>
 *	 @option {String} top_link_class The class to add to the top link anchor element. Ex: <a href="#top" class="top">Top</a>
+*	 @option {Boolean} append_toc_header_class Append an extra class to headers listed in the TOC
+*	 @option {String} toc_header_class The class to append to the TOC headers
 * @return {jQuery} Returns the same jQuery object, for chaining.
 *
 * @example $('body').nsm_TOC();
@@ -137,6 +139,11 @@
 						$self.append(" <a href='" + o.top_link_href + "' class='" + o.top_link_class + "'>Top</a>");
 					}
 
+					if(o.append_toc_header_class)
+					{
+						$self.addClass(o.toc_header_class);
+					}
+
 					if(o.append_toc)
 					{
 						// do the TOC link
@@ -169,20 +176,22 @@
 
 	// plugin defaults
 	$.fn.nsm_TOC.defaults = {
-		append_toc:				true, 
-		toc_el:					"body",
-		ignore: 				".toc-ignore",
-		hash_prefix: 			"toc-",
-		min_depth:				1,
-		max_depth: 				6,
-		prepend_toc_marker:		true,
-		toc_marker_suffix:		".",
-		toc_marker_separator: 	".",
-		debug:					true,
-		toc_marker_class:		"toc-marker",
-		append_top_links:		true,
-		top_link_href:			"#",
-		top_link_class:			"top"
+		append_toc:					true, 
+		toc_el:						"body",
+		ignore: 					".toc-ignore",
+		hash_prefix: 				"toc-",
+		min_depth:					1,
+		max_depth: 					6,
+		prepend_toc_marker:			true,
+		toc_marker_suffix:			".",
+		toc_marker_separator: 		".",
+		debug:						true,
+		toc_marker_class:			"toc-marker",
+		append_top_links:			true,
+		top_link_href:				"#",
+		top_link_class:				"top",
+		append_toc_header_class:	true,
+		toc_header_class:			"toc-header"
 	};
 
 // end of closure
