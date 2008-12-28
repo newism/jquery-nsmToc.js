@@ -43,7 +43,7 @@
 
 (function($) {
 	// plugin definition
-	$.fn.nsmTOC = function(options) {
+	$.fn.nsm_TOC = function(options) {
 
 		log("nsm_TOC.js selection count: %c", this.size());
 
