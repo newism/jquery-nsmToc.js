@@ -63,7 +63,7 @@
 
 			var o = $.meta ? $.extend({}, opts, $self.data()) : opts;
 
-			$("*[id]:header:visible", $self).each(function(index, heading) {
+			$(o.header_selector, $self).each(function(index, heading) {
 
 				var $self 		= $(this);
 				var text		= $self.text().replace(/>/g, "&gt;").replace(/</g, "&lt;");
@@ -72,9 +72,8 @@
 
 				if (o.min_depth <= hDepth && hDepth <= o.max_depth && !$self.is(o.ignore)) {
 
-					log("\nProcessing heading %o", heading);
-
 					var $li = $("<li>");
+					log("\nProcessing heading %o", heading);
 
 					// same depth
 					if (depth == lastDepth) {
@@ -176,6 +175,7 @@
 
 	// plugin defaults
 	$.fn.nsm_TOC.defaults = {
+		header_selector:			":header:visible", 
 		append_toc:					true, 
 		toc_el:						"body",
 		ignore: 					".toc-ignore",

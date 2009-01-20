@@ -76,15 +76,16 @@
 	<p>Aenean vitae libero. Nulla felis justo, pulvinar ac, hendrerit sit amet, aliquet id, pede. Ut pulvinar odio et ipsum. Nullam ante? Sed quam mi, facilisis in; elementum et; porttitor non, lorem. Sed ornare mi eget diam! Vivamus eget magna ac purus aliquet mattis! Proin lobortis, nisl cursus lacinia tristique, ante mauris auctor felis, at mollis mi tellus in ligula. Proin metus dui, sollicitudin et, adipiscing ac, consequat sed, magna. Aenean quis lacus. Etiam auctor sem vitae ligula! Sed ac ligula in erat tristique condimentum. Suspendisse at sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque ut risus in turpis ornare pellentesque. Sed enim elit, faucibus ut, ultrices eu, tempus non, arcu. Nunc luctus neque non urna. Suspendisse potenti. Maecenas a dui.</p>
 </div>
 <div id="toc"></div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="./jquery-nsm_TOC.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript" charset="utf-8"> </script>
+<script src="./jquery-nsm_TOC.js" type="text/javascript" charset="utf-8"> </script>
 <script type="text/javascript" charset="utf-8">
 $("body").nsm_TOC({
-	generate_toc:	true, 
-	toc_el:			"#toc",
-	toc_title:		false,
-	min_depth:		1,
-	max_depth: 		6
+	generate_toc:		true,
+	header_selector:	"*[id]:header:visible", 
+	toc_el:				"#toc",
+	toc_title:			false,
+	min_depth:			1,
+	max_depth: 			6
 });
 </script>
 </body>
