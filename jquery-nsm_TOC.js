@@ -185,7 +185,7 @@
 		prepend_toc_marker:			true,
 		toc_marker_suffix:			".",
 		toc_marker_separator: 		".",
-		debug:						true,
+		debug:						false,
 		toc_marker_class:			"toc-marker",
 		append_top_links:			true,
 		top_link_href:				"#",
