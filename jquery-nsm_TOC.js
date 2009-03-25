@@ -66,9 +66,11 @@
 			$(o.header_selector, $self).each(function(index, heading) {
 
 				var $self 		= $(this);
-				var text		= $self.text().replace(/>/g, "&gt;").replace(/</g, "&lt;");
 				var hDepth 		= parseInt(heading.tagName.substring(1));
 				var depth 		= hDepth - o.min_depth;
+
+				var text = ($self.attr("title")) ? $self.attr("title") : $self.text();
+				text = text.replace(/>/g, "&gt;").replace(/</g, "&lt;");
 
 				if (o.min_depth <= hDepth && hDepth <= o.max_depth && !$self.is(o.ignore)) {
 
@@ -175,6 +177,7 @@
 
 	// plugin defaults
 	$.fn.nsm_TOC.defaults = {
+		debug:						true,
 		header_selector:			":header:visible", 
 		append_toc:					true, 
 		toc_el:						"body",
@@ -185,7 +188,6 @@
 		prepend_toc_marker:			true,
 		toc_marker_suffix:			".",
 		toc_marker_separator: 		".",
-		debug:						false,
 		toc_marker_class:			"toc-marker",
 		append_top_links:			true,
 		top_link_href:				"#",
