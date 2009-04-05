@@ -8,7 +8,7 @@
 * http://newism.com.au
 *
 * @author Leevi Graham - Technical Director, Newism Pty Ltd
-* @version 1.0.0
+* @version 1.1.0
 * @requires jQuery 1.2+ http://jquery.com
 * @see http://github.com/newism/nsm.toc.jquery_plugin/tree/master
 *

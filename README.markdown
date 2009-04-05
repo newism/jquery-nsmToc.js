@@ -24,7 +24,7 @@ Usage
 
 	$('body').nsm_TOC();
 	$('body').nsm_TOC({ hash_prefix: "h-"}); // Changes the hash prefix for the TOC links
-	$('body').nsm_TOC({ min_depth: 2, max_depth: 5}); // Creates a TOC using heading elments 2-5 nested in the target element
+	$('body').nsm_TOC({ start_depth: 2, end_depth: 5}); // Creates a TOC using heading elments 2-5 nested in the target element
 	$('body').nsm_TOC({ append_top_links: false}); // Doesn't add top links to heading elements
 
 ### Example TOC output:
