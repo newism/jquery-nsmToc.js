@@ -67,7 +67,7 @@
 			// for each of our headers
 			$(o.header_selector, $self).each(function(index, heading)
 			{
-				var $self 			= $(this);
+				var $self 				= $(this);
 				// get the current heading depth 1-6
 				var header_depth 		= parseInt(heading.tagName.substring(1));
 
@@ -77,6 +77,7 @@
 					var target_depth 	= header_depth - o.start_depth;
 					var text 			= ($self.attr("title")) ? $self.attr("title") : $self.text();
 					text 				= text.replace(/>/g, "&gt;").replace(/</g, "&lt;");
+					var hash_text 		= text.replace(/[^0-9a-zA-Z\-]+/gi, "_").toLowerCase();
 
 					// create an LI
 					var $li = $("<li />");
@@ -135,7 +136,7 @@
 						{
 							log("unnesting because: "  + target_depth + " < " + current_depth);
 							
-							// delete the current levi
+							// delete the current level
 							levels[current_depth] = 0;
 							delete hash_segments[current_depth];
 
@@ -153,7 +154,7 @@
 					levels[current_depth]++;
 					
 					// Add a new hash segment to our hash segments array
-					hash_segments[current_depth] = text.replace(/[^0-9a-zA-Z\-]+/gi, "_").toLowerCase();
+					hash_segments[current_depth] = hash_text;
 
 					// create the TOC integer marker and remove any extra 0's
 					toc_marker = levels.join(o.toc_marker_separator).replace(/(\.0)+$/, "");
