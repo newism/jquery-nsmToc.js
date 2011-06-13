@@ -1,4 +1,4 @@
-nsm_TOC.js - A jQuery plugin to create a table of contents from HTML markup.
+nsmToc.js - A jQuery plugin to create a table of contents from HTML markup.
 ===========================================================================
 
 **Author**: [Leevi Graham][] - Technical Director, [Newism Pty Ltd][]  
@@ -7,7 +7,7 @@ nsm_TOC.js - A jQuery plugin to create a table of contents from HTML markup.
 About
 -----
 
-nsm_TOC.js is a jQuery plugin that generates a nested <code>&lt;ul&gt;</code> table of contents based on header tags <code>&lt;h<em>n</em>&gt;</code> in your html markup. The TOC list item content is pulled from the title attribute of the heading element and falls back to the element content.
+nsmToc.js is a jQuery plugin that generates a nested <code>&lt;ul&gt;</code> table of contents based on header tags <code>&lt;h<em>n</em>&gt;</code> in your html markup. The TOC list item content is pulled from the title attribute of the heading element and falls back to the element content.
 
 Other features include:
 
@@ -18,14 +18,14 @@ Other features include:
 Usage
 -----
 
-	nsm_TOC(options)
+	nsmToc(options)
 
 ### Examples
 
-	$('body').nsm_TOC();
-	$('body').nsm_TOC({ hash_prefix: "h-"}); // Changes the hash prefix for the TOC links
-	$('body').nsm_TOC({ start_depth: 2, end_depth: 5}); // Creates a TOC using heading elments 2-5 nested in the target element
-	$('body').nsm_TOC({ append_top_links: false}); // Doesn't add top links to heading elements
+	$('body').nsmToc();
+	$('body').nsmToc({ hash_prefix: "h-"}); // Changes the hash prefix for the TOC links
+	$('body').nsmToc({ start_depth: 2, end_depth: 5}); // Creates a TOC using heading elments 2-5 nested in the target element
+	$('body').nsmToc({ append_top_links: false}); // Doesn't add top links to heading elements
 
 ### Example TOC output:
 
@@ -111,7 +111,7 @@ Returns the same jQuery object, for chaining.
 License
 -------
 
-nsm_TOC.js is currently available for use in all personal or commercial projects under [Creative Commons Attribution-Share Alike 3.0 Unported][] license.
+nsmToc.js is currently available for use in all personal or commercial projects under [Creative Commons Attribution-Share Alike 3.0 Unported][] license.
 
 You are free to:
 
