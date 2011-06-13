@@ -1,16 +1,12 @@
 /**
 * jQuery.nsmToc
-* Copyright (c) 2008-2009 Newmso - leevi(at)newism(dot)com(dot)au | http://newism.com.au
-* Licensed under Creative Commons Attribution-Share Alike 3.0 Unported license. | http://creativecommons.org/licenses/by-sa/3.0/
-* Date: 27 Dec 2008
 *
 * @projectDescription Generate a table of contents based on header tags in your html markup.
-* http://newism.com.au
 *
-* @author Leevi Graham - Technical Director, Newism Pty Ltd
+* @author Leevi Graham <http://leevigraham.com> - Technical Director, Newism Pty Ltd <http://newism.com.au>
 * @version 1.2.0
 * @requires jQuery 1.2+ http://jquery.com
-* @see http://github.com/newism/nsm.toc.jquery_plugin/tree/master
+* @see http://github.com/newism/newism/jquery-nsmToc.js/tree/master
 *
 * @id jQuery.nsmToc
 * @id jQuery.fn.nsmToc
@@ -47,7 +43,7 @@
 
 	// plugin definition
 	$.fn.nsmToc = function(options) {
-		log("nsmToc.js selection count: %c", this.size());
+		log("jquery-nsmToc.js selection count: %c", this.size());
 
 		// build main options before element iteration
 		var opts = $.extend({}, $.fn.nsmToc.defaults, options);

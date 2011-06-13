@@ -1,13 +1,13 @@
-nsmToc.js - A jQuery plugin to create a table of contents from HTML markup.
+jquery-nsmToc.js - A jQuery plugin to create a table of contents from HTML markup.
 ===========================================================================
 
 **Author**: [Leevi Graham][] - Technical Director, [Newism Pty Ltd][]  
-**Git Master Repository**: <http://github.com/newism/nsm.toc.jquery_plugin/tree/master>
+**Git Master Repository**: <http://github.com/newism/jquery-nsmToc.js/tree/master>
 
 About
 -----
 
-nsmToc.js is a jQuery plugin that generates a nested <code>&lt;ul&gt;</code> table of contents based on header tags <code>&lt;h<em>n</em>&gt;</code> in your html markup. The TOC list item content is pulled from the title attribute of the heading element and falls back to the element content.
+jquery-nsmToc.js is a jQuery plugin that generates a nested <code>&lt;ul&gt;</code> table of contents based on header tags <code>&lt;h<em>n</em>&gt;</code> in your html markup. The TOC list item content is pulled from the title attribute of the heading element and falls back to the element content.
 
 Other features include:
 
@@ -111,7 +111,7 @@ Returns the same jQuery object, for chaining.
 License
 -------
 
-nsmToc.js is currently available for use in all personal or commercial projects under [Creative Commons Attribution-Share Alike 3.0 Unported][] license.
+jquery-nsmToc.js is currently available for use in all personal or commercial projects under [Creative Commons Attribution-Share Alike 3.0 Unported][] license.
 
 You are free to:
 
