@@ -164,7 +164,11 @@
 
 					// append the top links
 					if(o.append_top_links) {
-						$self.append(" <a href='" + o.top_link_href + "' class='" + o.top_link_class + "'>"+o.top_link_text+"</a>");
+						var $a = $("<a />").attr({
+							href: o.top_link_href,
+							class: o.top_link_class
+						}).text(o.top_link_text);
+						$self.append($a);
 					}
 
 					// append the TOC
@@ -216,9 +220,9 @@
 		toc_marker_separator: 		".",
 		toc_marker_class:			"toc-marker",
 		append_top_links:			true,
-		top_link_text:				'&uarr; Top',
+		top_link_text:				'↑Top',
 		top_link_href:				"#",
-		top_link_class:				"top",
+		top_link_class:				"toc-top",
 		append_toc_header_class:	true,
 		toc_header_class:			"toc-header"
 	};

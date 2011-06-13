@@ -532,16 +532,16 @@
 	<p>Nunc eleifend; massa in mollis pretium, purus sapien aliquam diam; vehicula egestas ligula massa sed urna. Donec molestie, tortor eget hendrerit mattis, tellus erat fringilla purus, at tristique est justo in elit. Nulla imperdiet rhoncus risus. Pellentesque dapibus est aliquam mauris. Mauris lobortis, pede nec viverra interdum, est purus tincidunt mi; nec pretium neque eros non dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras urna tellus; varius eget, rutrum a, tempor vitae, ante? Ut eu lorem. Suspendisse eget ante ultrices magna placerat eleifend. Cras euismod metus a risus. </p></div>
 <div id="toc"></div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript" charset="utf-8"> </script>
-<script src="./jquery-jquery-nsmToc.js" type="text/javascript" charset="utf-8"> </script>
+<script src="./jquery-nsmToc.js" type="text/javascript" charset="utf-8"> </script>
 <script type="text/javascript" charset="utf-8">
-$("body").nsmToc({
-	generate_toc:		true,
-	header_selector:	":header:visible", 
-	toc_el:				"#toc",
-	toc_title:			false,
-	start_depth:		2,
-	end_depth: 			6
-});
+	$("body").nsmToc({
+		generate_toc:		true,
+		header_selector:	":header:visible", 
+		toc_el:				"#toc",
+		toc_title:			false,
+		start_depth:		2,
+		end_depth: 			6
+	});
 </script>
 </body>
 </html>
