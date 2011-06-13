@@ -1,5 +1,5 @@
 /**
-* jQuery.nsm_TOC
+* jQuery.nsmToc
 * Copyright (c) 2008-2009 Newmso - leevi(at)newism(dot)com(dot)au | http://newism.com.au
 * Licensed under Creative Commons Attribution-Share Alike 3.0 Unported license. | http://creativecommons.org/licenses/by-sa/3.0/
 * Date: 27 Dec 2008
@@ -8,12 +8,12 @@
 * http://newism.com.au
 *
 * @author Leevi Graham - Technical Director, Newism Pty Ltd
-* @version 1.1.0
+* @version 1.2.0
 * @requires jQuery 1.2+ http://jquery.com
 * @see http://github.com/newism/nsm.toc.jquery_plugin/tree/master
 *
-* @id jQuery.nsm_TOC
-* @id jQuery.fn.nsm_TOC
+* @id jQuery.nsmToc
+* @id jQuery.fn.nsmToc
 * @param {Object} options Hash of settings, optional.
 *	 @option {Boolean} append_toc Append the generated TOC to the toc_el
 *	 @option {String, DOMElement, jQuery, Object} toc_el The element that the TOC will be appended to
@@ -31,31 +31,30 @@
 *	 @option {String} toc_header_class The class to append to the TOC headers
 * @return {jQuery} Returns the same jQuery object, for chaining.
 *
-* @example $('body').nsm_TOC();
+* @example $('body').nsmToc();
 *
-* @example $('body').nsm_TOC({ hash_prefix: "h-"}); // Changes the hash prefix for the TOC links
-* @example $('body').nsm_TOC({ start_depth: 2, end_depth: 5}); // Creates a TOC using heading elments 2-5 nested in the target element
-* @example $('body').nsm_TOC({ add_top_links: false}); // Doesn't add top links to heading elements
+* @example $('body').nsmToc({ hash_prefix: "h-"}); // Changes the hash prefix for the TOC links
+* @example $('body').nsmToc({ start_depth: 2, end_depth: 5}); // Creates a TOC using heading elments 2-5 nested in the target element
+* @example $('body').nsmToc({ add_top_links: false}); // Doesn't add top links to heading elements
 *
 * Notes:
-*  - Influenced by: http://code.google.com/p/jqplanize/ & http://blog.rebeccamurphey.com/2007/12/24/jquery-table-of-contents-plugin-nested/
-*	- Still a work in progress
-*	- Not tested on all platforms
+* - Influenced by: http://code.google.com/p/jqplanize/ & http://blog.rebeccamurphey.com/2007/12/24/jquery-table-of-contents-plugin-nested/
+* - Still a work in progress
+* - Not tested on all platforms
 */
 
-(function($)
-{
+;(function($) {
+
 	// plugin definition
-	$.fn.nsm_TOC = function(options)
-	{
-		log("nsm_TOC.js selection count: %c", this.size());
+	$.fn.nsmToc = function(options) {
+		log("nsmToc.js selection count: %c", this.size());
 
 		// build main options before element iteration
-		var opts = $.extend({}, $.fn.nsm_TOC.defaults, options);
+		var opts = $.extend({}, $.fn.nsmToc.defaults, options);
 
 		// iterate and reformat each matched element
-		return this.each(function()
-		{
+		return this.each(function() {
+
 			var $self 			= $(this);
 			var o 				= $.meta ? $.extend({}, opts, $self.data()) : opts;
 			var $toc 			= $current_ul = $("<ul />").addClass("l-0");
@@ -65,15 +64,15 @@
 			var hash_segments	= [];
 
 			// for each of our headers
-			$(o.header_selector, $self).each(function(index, heading)
-			{
+			$(o.header_selector, $self).each(function(index, heading) {
+
 				var $self 				= $(this);
+
 				// get the current heading depth 1-6
 				var header_depth 		= parseInt(heading.tagName.substring(1));
 
 				// if the current depth is the s
-				if (o.start_depth <= header_depth && header_depth <= o.end_depth && !$self.is(o.ignore))
-				{
+				if (o.start_depth <= header_depth && header_depth <= o.end_depth && !$self.is(o.ignore)) {
 					var target_depth 	= header_depth - o.start_depth;
 					var text 			= ($self.attr("title")) ? $self.attr("title") : $self.text();
 					text 				= text.replace(/>/g, "&gt;").replace(/</g, "&lt;");
@@ -85,16 +84,14 @@
 					log("\nProcessing heading %o", $(heading).text());
 
 					// same level
-					if (target_depth == current_depth)
-					{
+					if (target_depth == current_depth) {
 						log("same depth (" + target_depth + ")");
 						levels[current_depth + 1] = 0;
 						delete hash_segments[current_depth + 1];
 						$current_ul.append($li);
-					}
+
 					// going down
-					else if (target_depth > current_depth)
-					{
+					} else if (target_depth > current_depth) {
 						// loop for non-consectutive heading levels
 						// we can go from a level 1 to level 5
 						while(target_depth > current_depth)
@@ -126,14 +123,11 @@
 						}
 						// append the list item
 						$current_ul.append($li);
-					}
 					// coming up
-					else if (target_depth < current_depth)
-					{
+					} else if (target_depth < current_depth) {
 						// loop for non-consectutive heading levels
 						// we can go from a level 3 to level 1
-						while(target_depth < current_depth)
-						{
+						while(target_depth < current_depth) {
 							log("unnesting because: "  + target_depth + " < " + current_depth);
 							
 							// delete the current level
@@ -168,55 +162,42 @@
 					prependText = toc_marker + o.toc_marker_suffix;
 
 					// do the titles
-					if(o.prepend_toc_marker)
-					{
+					if(o.prepend_toc_marker) {
 						$self.prepend('<span id="' + o.hash_prefix + toc_hash_link + '" class="' + o.toc_marker_class + '">' + prependText + '</span> ');
 					}
 
 					// append the top links
-					if(o.append_top_links)
-					{
-						$self.append(" <a href='" + o.top_link_href + "' class='" + o.top_link_class + "'>Top</a>");
+					if(o.append_top_links) {
+						$self.append(" <a href='" + o.top_link_href + "' class='" + o.top_link_class + "'>"+o.top_link_text+"</a>");
 					}
 
 					// append the TOC
-					if(o.append_toc)
-					{
+					if(o.append_toc) {
 						// do the TOC link
 						link_toc_marker = (o.prepend_toc_marker) ? '<span class="' + o.toc_marker_class + '">' + prependText + '</span> ' : '';
 						$li.addClass($self.attr("class")).prepend('<a href="#' + o.hash_prefix + toc_hash_link + '">' + link_toc_marker + text + '</a>');
 					}
 
 					// add TOC header classes
-					if(o.append_toc_header_class)
-					{
+					if(o.append_toc_header_class) {
 						$self.addClass(o.toc_header_class);
 					}
-
 				}
-				
 			});
 
 			// append the TOC
-			if(o.append_toc)
-			{
+			if(o.append_toc) {
 				$(o.toc_el).append($toc);
 			}
 		});
 
 		function log() {
-			if (!$.fn.nsm_TOC.defaults.debug)
-			{
+			if (!$.fn.nsmToc.defaults.debug) {
 				return;
-			}
-			try
-			{
+			} try {
 				console.log.apply(console, arguments);
-			}
-			catch(e)
-			{
-				try
-				{
+			} catch(e) {
+				try {
 					opera.postError.apply(opera, arguments);
 				}
 				catch(e){}
@@ -225,7 +206,7 @@
 	}
 
 	// plugin defaults
-	$.fn.nsm_TOC.defaults = {
+	$.fn.nsmToc.defaults = {
 		debug:						false,
 		header_selector:			":header:visible", 
 		append_toc:					true, 
@@ -239,6 +220,7 @@
 		toc_marker_separator: 		".",
 		toc_marker_class:			"toc-marker",
 		append_top_links:			true,
+		top_link_text:				'&uarr; Top',
 		top_link_href:				"#",
 		top_link_class:				"top",
 		append_toc_header_class:	true,
