@@ -11,6 +11,7 @@
     "jquery",
     "toc"
   ],
+  "main": ["jquery-nsmToc.js"],
   "license": "MIT",
   "private": true,
   "ignore": [
